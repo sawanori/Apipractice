@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @poem_datum.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @poem_datum.content %>
+</p>
+
+<%= link_to 'Edit', edit_poem_datum_path(@poem_datum) %> |
+<%= link_to 'Back', poem_data_path %>

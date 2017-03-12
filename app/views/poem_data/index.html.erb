@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Poem Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poem_data.each do |poem_datum| %>
+      <tr>
+        <td><%= poem_datum.title %></td>
+        <td><%= poem_datum.content %></td>
+        <td><%= link_to 'Show', poem_datum %></td>
+        <td><%= link_to 'Edit', edit_poem_datum_path(poem_datum) %></td>
+        <td><%= link_to 'Destroy', poem_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poem datum', new_poem_datum_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@poem_datum) do |f| %>
+  <% if @poem_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poem_datum.errors.count, "error") %> prohibited this poem_datum from being saved:</h2>
+
+      <ul>
+      <% @poem_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
